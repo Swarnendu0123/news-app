@@ -1,5 +1,5 @@
 import Card from "../card/card.component";
-import Fyqs from "../fyqs/fyq.component";
+import Filters from "../filters/filters.component";
 
 const CardContainer = (props) => {
   return (
@@ -7,8 +7,6 @@ const CardContainer = (props) => {
       <div class="mx-auto max-w-screen-xl px-4   ">
         <div class="mt-8 block lg:hidden">
           <button class="flex cursor-pointer items-center gap-2 border-b border-gray-400 pb-1 text-gray-900 transition hover:border-gray-600">
-            <span class="text-sm font-medium"> FYQs </span>
-
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -27,8 +25,7 @@ const CardContainer = (props) => {
         </div>
 
         <div class="mt-4 lg:mt-8 lg:grid lg:grid-cols-4 lg:items-start lg:gap-8">
-          <Fyqs />
-
+          <Filters />
           <div class="lg:col-span-3">
             <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {props.data.map((news) => {

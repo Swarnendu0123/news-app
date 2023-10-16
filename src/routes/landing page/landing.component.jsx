@@ -1,5 +1,6 @@
 import Footer from "../../components/footer/footer.component";
 import Navagation from "../../components/navagation/navagation.component";
+import NewsLetter from "../../components/news letter/newsLetter.component";
 
 const Landing = () => {
   return (
@@ -9,7 +10,7 @@ const Landing = () => {
         <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
           <div class="mx-auto max-w-3xl text-center">
             <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl">
-              Embrace knowledge; it illuminates the path to endless
+              Embrace knowledge; <br /> it illuminates the path to endless
               possibilities.
             </h2>
 
@@ -30,11 +31,11 @@ const Landing = () => {
             <dl class="grid grid-cols-1 gap-4 sm:grid-cols-3">
               <div class="flex flex-col rounded-lg border border-gray-100 px-4 py-8 text-center">
                 <dt class="order-last text-lg font-medium text-gray-500">
-                  Total Sales
+                  Daily Visitors
                 </dt>
 
                 <dd class="text-4xl font-extrabold text-black md:text-5xl">
-                  $4.8m
+                  4000000+
                 </dd>
               </div>
 
@@ -44,7 +45,7 @@ const Landing = () => {
                 </dt>
 
                 <dd class="text-4xl font-extrabold text-black md:text-5xl">
-                  24
+                  24000+
                 </dd>
               </div>
 
@@ -54,7 +55,7 @@ const Landing = () => {
                 </dt>
 
                 <dd class="text-4xl font-extrabold text-black md:text-5xl">
-                  86
+                  86000+
                 </dd>
               </div>
             </dl>
@@ -85,7 +86,7 @@ const Landing = () => {
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
               <a
                 class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="/accountant"
+                href="/home"
               >
                 <span class="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -115,7 +116,7 @@ const Landing = () => {
 
               <a
                 class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="/accountant"
+                href="/home"
               >
                 <span class="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -145,7 +146,7 @@ const Landing = () => {
 
               <a
                 class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="/accountant"
+                href="/home"
               >
                 <span class="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -175,7 +176,7 @@ const Landing = () => {
 
               <a
                 class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="/accountant"
+                href="/home"
               >
                 <span class="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -205,7 +206,7 @@ const Landing = () => {
 
               <a
                 class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="/accountant"
+                href="/home"
               >
                 <span class="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -235,7 +236,7 @@ const Landing = () => {
 
               <a
                 class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                href="/accountant"
+                href="/home"
               >
                 <span class="inline-block rounded-lg bg-gray-50 p-3">
                   <svg
@@ -266,6 +267,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
+      <NewsLetter />
       <Footer />
     </div>
   );

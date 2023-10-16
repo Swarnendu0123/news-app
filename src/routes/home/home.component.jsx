@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import data from "../../Sample_Report.json";
 import CardContainer from "../../components/card container/cardContainer.component";
-import Search from "../../components/search/search.component";
 import Navagation from "../../components/navagation/navagation.component";
 
 const Home = () => {
@@ -24,9 +23,6 @@ const Home = () => {
   return (
     <div>
       <Navagation onChange={onSearchChange} />
- 
-
-
       <CardContainer data={filteredNewses} onChange={onSearchChange} />
     </div>
   );

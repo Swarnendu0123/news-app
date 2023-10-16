@@ -1,7 +1,9 @@
+import data from "../../Sample_Report.json";
+const newses = data.results;
+
 const Card = (props) => {
-  const { pubDate, link, title, description, image_url, id } = props.news;
-  let news_page = "/news/" + id;
-  news_page = link;
+  const { pubDate, link, title, description, image_url } = props.news;
+
   return (
     <li>
       <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
@@ -12,7 +14,7 @@ const Card = (props) => {
             {pubDate}
           </time>
 
-          <a href={news_page}>
+          <a href={"/news/" + newses.indexOf(props.news)}>
             <h3 class="mt-0.5 text-lg text-gray-900">{title}</h3>
           </a>
 

@@ -4,15 +4,15 @@ const Navagation = (props) => {
   const { onChange } = props;
 
   return (
-    <header class="bg-white sticky top-0">
+    <header class="bg-white sticky top-0 z-[+1]">
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="md:flex md:items-center md:gap-12">
             <a class="block text-black" href="/">
               <span class="sr-only">Home</span>
               <div class="flex items-center">
-                <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
-                  NewsWave
+                <h2 class="text-4xl font-extrabold text-black md:text-5xl">
+                  News Wave
                 </h2>
               </div>
             </a>
@@ -24,36 +24,9 @@ const Navagation = (props) => {
                 <li>
                   <a
                     class="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    href="/home"
                   >
-                    About
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
-                    href=""
-                  >
-                    Categories
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    History
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    class="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    Services
+                    Home
                   </a>
                 </li>
 
