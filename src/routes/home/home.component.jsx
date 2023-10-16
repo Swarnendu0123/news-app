@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import data from "../../Sample_Report.json";
 import CardContainer from "../../components/card container/cardContainer.component";
 import Navagation from "../../components/navagation/navagation.component";
+import Footer from "../../components/footer/footer.component";
+import Trending from "../../components/trending/latestNews.component";
 
 const Home = () => {
   const [searchField, setSearchfield] = useState("");
@@ -23,7 +25,9 @@ const Home = () => {
   return (
     <div>
       <Navagation onChange={onSearchChange} />
+      <Trending/>
       <CardContainer data={filteredNewses} onChange={onSearchChange} />
+      <Footer/>
     </div>
   );
 };
