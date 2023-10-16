@@ -1,21 +1,18 @@
 const Card = (props) => {
-  const { pubDate, link, title, description, image_url } = props.news;
-
+  const { pubDate, link, title, description, image_url, id } = props.news;
+  let news_page = "/news/" + id;
+  news_page = link;
   return (
     <li>
       <article class="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-        <img
-          alt="Office"
-          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-          class="h-56 w-full object-cover"
-        />
+        <img alt="Office" src={image_url} class="h-56 w-full object-cover" />
 
         <div class="bg-white p-4 sm:p-6">
           <time datetime="2022-10-10" class="block text-xs text-gray-500">
             {pubDate}
           </time>
 
-          <a href={link}>
+          <a href={news_page}>
             <h3 class="mt-0.5 text-lg text-gray-900">{title}</h3>
           </a>
 
