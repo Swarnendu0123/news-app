@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import data from "../../Sample_Report.json";
 import Navagation from "../../components/navagation/navagation.component";
 import CardContainer from "../../components/card container/cardContainer.component";
+import Footer from "../../components/footer/footer.component";
 
 const News = () => {
   let { id } = useParams();
@@ -11,6 +12,7 @@ const News = () => {
   const news = data.results[id];
   const [searchField, setSearchfield] = useState("");
   const [filteredNewses, setFilteredNewses] = useState(newses);
+  const [location, setLocation] = useState("");
 
   useEffect(() => {
     setFilteredNewses(
@@ -18,10 +20,24 @@ const News = () => {
     );
   }, [searchField]);
 
+  useEffect(() => {
+    setFilteredNewses(
+      newses.filter((news) => news.country[0].toLowerCase().includes(location))
+    );
+  }, [location]);
+
+  // handeler for search change
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
     setSearchfield(searchFieldString);
   };
+
+    // handeler for location change
+    const onLocationChange = (event) => {
+      const searchedLocation = event.target.value.toLowerCase();
+      setLocation(searchedLocation);
+    };
+
 
   return (
     <section>
@@ -55,7 +71,8 @@ const News = () => {
       <h1 class="text-center text-xl font-bold text-gray-900 sm:text-3xl">
         Read More 
       </h1>
-      <CardContainer data={filteredNewses} onChange={onSearchChange} />
+      <CardContainer data={filteredNewses} onChange={[onSearchChange, onLocationChange]} />
+      <Footer/>
     </section>
   );
 };
