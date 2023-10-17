@@ -5,6 +5,7 @@ import data from "../../Sample_Report.json";
 import Navagation from "../../components/navagation/navagation.component";
 import CardContainer from "../../components/card container/cardContainer.component";
 import Footer from "../../components/footer/footer.component";
+import Location from "../../components/locations/locationList.component";
 
 const News = () => {
   let { id } = useParams();
@@ -32,17 +33,17 @@ const News = () => {
     setSearchfield(searchFieldString);
   };
 
-    // handeler for location change
-    const onLocationChange = (event) => {
-      const searchedLocation = event.target.value.toLowerCase();
-      setLocation(searchedLocation);
-    };
-
+  // handeler for location change
+  const onLocationChange = (event) => {
+    const searchedLocation = event.target.value.toLowerCase();
+    setLocation(searchedLocation);
+  };
 
   return (
     <section>
       <Navagation onChange={onSearchChange} />
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <Location country={news.country} />
         <div class="max-w-3xl">
           <h2 class="text-3xl font-bold sm:text-4xl">{news.title}</h2>
         </div>
@@ -55,7 +56,7 @@ const News = () => {
             <img
               alt="Party"
               src={news.image_url}
-              class="absolute inset-0  w-full object-cover "
+              class="absolute inset-0  w-full object-cover"
             />
           </div>
 
@@ -69,10 +70,13 @@ const News = () => {
         </div>
       </div>
       <h1 class="text-center text-xl font-bold text-gray-900 sm:text-3xl">
-        Read More 
+        Read More
       </h1>
-      <CardContainer data={filteredNewses} onChange={[onSearchChange, onLocationChange]} />
-      <Footer/>
+      <CardContainer
+        data={filteredNewses}
+        onChange={[onSearchChange, onLocationChange]}
+      />
+      <Footer />
     </section>
   );
 };
