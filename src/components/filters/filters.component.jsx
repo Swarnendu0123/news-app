@@ -1,5 +1,6 @@
-
 const Filters = (props) => {
+  const { onChange } = props;
+
   return (
     <div class="hidden space-y-4 lg:block sticky top-20">
       <h1 class="text-xl font-bold text-gray-900 sm:text-1xl text-center">
@@ -37,10 +38,11 @@ const Filters = (props) => {
                   class="relative block overflow-hidden border-b border-gray-200 bg-transparent pt-3 focus-within:border-blue-600"
                 >
                   <input
-                    type="text"
+                    type="input"
                     id="Location"
                     placeholder="Location"
                     class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                    onChange={onChange}
                   />
 
                   <span class="absolute start-0 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs">
@@ -61,7 +63,7 @@ const Filters = (props) => {
 
         <details class="overflow-hidden rounded border border-gray-300 [&_summary::-webkit-details-marker]:hidden">
           <summary class="flex cursor-pointer items-center justify-between gap-2 bg-white p-4 text-gray-900 transition">
-            <span class="text-sm font-medium"> Topics  </span>
+            <span class="text-sm font-medium"> Topics </span>
 
             <span class="transition group-open:-rotate-180">
               <svg
@@ -239,7 +241,6 @@ const Filters = (props) => {
                     />
                   </svg>
                 </button>
-               
               </form>
             </div>
           </div>

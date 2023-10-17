@@ -8,24 +8,40 @@ const Home = () => {
   const [searchField, setSearchfield] = useState("");
   const [newses, setNewses] = useState(data.results);
   const [filteredNewses, setFilteredNewses] = useState(newses);
+  const [location, setLocation] = useState("");
 
+
+  //function to filter search from navagation
   useEffect(() => {
     setFilteredNewses(
       newses.filter((news) => news.title.toLowerCase().includes(searchField))
     );
   }, [searchField]);
 
+  useEffect(() => {
+    setFilteredNewses(
+      newses.filter((news) => news.country[0].toLowerCase().includes(location))
+    );
+  }, [location]);
+
+  // handeler for search change
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLowerCase();
     setSearchfield(searchFieldString);
   };
 
-  console.log(searchField);
+  // handeler for location change
+  const onLocationChange = (event) => {
+    const searchedLocation = event.target.value.toLowerCase();
+    setLocation(searchedLocation);
+  };
+
+  console.log(location);
   return (
     <div>
       <Navagation onChange={onSearchChange} />
-      <CardContainer data={filteredNewses} onChange={onSearchChange} />
-      <Footer/>
+      <CardContainer data={filteredNewses} onChange={[onSearchChange, onLocationChange]} />
+      <Footer />
     </div>
   );
 };

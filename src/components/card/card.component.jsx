@@ -1,8 +1,9 @@
 import data from "../../Sample_Report.json";
+import Location from "../locations/locationList.component";
 const newses = data.results;
 
 const Card = (props) => {
-  const { pubDate, link, title, description, image_url } = props.news;
+  const { pubDate, country, title, description, image_url } = props.news;
 
   return (
     <li>
@@ -13,7 +14,7 @@ const Card = (props) => {
           <time datetime="2022-10-10" class="block text-xs text-gray-500">
             {pubDate}
           </time>
-
+          <Location country={country} />
           <a href={"/news/" + newses.indexOf(props.news)}>
             <h3 class="mt-0.5 text-lg text-gray-900">{title}</h3>
           </a>
