@@ -67,3 +67,4 @@ This project aims to provide a consistent experience across different browsers. 
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+# portfolio-react
